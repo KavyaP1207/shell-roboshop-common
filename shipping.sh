@@ -8,7 +8,7 @@ java_setup
 systemd_setup
 
 
-dnf install mysql -y 
+dnf install mysql -y &>>$LOG_FILE
 
 mysql -h $MYSQL_HOST -uroot -pRoboShop@1 -e 'use cities' &>>$LOG_FILE
 if [ $? -ne 0 ]; then
